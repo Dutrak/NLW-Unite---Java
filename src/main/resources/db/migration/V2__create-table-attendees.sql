@@ -1,0 +1,8 @@
+CREATE TABLE attendees(
+    att_id VARCHAR(255) NOT NULL PRIMARY KEY,
+    att_name VARCHAR(255) NOT NULL,
+    att_email VARCHAR(255) NOT NULL,
+    ev_id VARCHAR(255) NOT NULL,
+    att_createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT att_event_id_fkey FOREIGN KEY (ev_id) REFERENCES events (ev_id) ON DELETE RESTRICT ON UPDATE CASCADE
+);
